@@ -6,6 +6,9 @@ Developer **Amir Hosseinzadeh** Published **Nov 25, 2021**
 ## How to Install
     bash ./docker/run.sh 
 
+### How to Test 
+    bash ./vendor/bin/sail artisan test
+
 #### Useful Commands
 ###### Start Docker
     bash ./vendor/bin/sail up -d
