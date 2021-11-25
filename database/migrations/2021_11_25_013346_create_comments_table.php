@@ -23,8 +23,8 @@ class CreateCommentsTable extends Migration
 
             $table->timestamps();
 
-            // INDEX
-            $table->index('parent_id');
+            // Foreign Key
+            $table->foreign('parent_id')->references('id')->on('comments');
         });
     }
 
