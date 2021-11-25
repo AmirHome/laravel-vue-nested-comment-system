@@ -4,7 +4,7 @@ require('../sass/app.scss')
 
 window.Vue = require('vue').default;
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('comment-app', require('./components/CommentApp.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

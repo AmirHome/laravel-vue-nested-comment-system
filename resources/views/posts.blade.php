@@ -6,9 +6,6 @@
 
         <title>Laravel Vuejs Nested Commentes System</title>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -21,9 +18,11 @@
     <div id="app">
         <main class="py-3">
             <h3>Laravel Vuejs Nested Commentes System</h3>
-            <example-component></example-component>
-
+            <comment-app></comment-app>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>

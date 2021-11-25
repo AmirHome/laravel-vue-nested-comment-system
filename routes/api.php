@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/** No authentication guards as of this moment. Free for all! */
+Route::resource('comments', 'Api\CommentController')->only([
+    'index', 'store'
+]);;
