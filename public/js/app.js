@@ -2222,6 +2222,9 @@ __webpack_require__.r(__webpack_exports__);
       submitting: false
     };
   },
+  mounted: function mounted() {
+    console.log('Component comments mounted.');
+  },
   methods: {
     /**
      * Post a new comment to the API
@@ -2237,13 +2240,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axios.post('/api/comments', this.comment).then(function (r) {
-        _this.comments.push(r.data.data);
+        _this.comments.unshift(r.data.data);
 
         _this.comment = {}; // Toggles the form from parent Comment component
 
         _this.$emit('toggle');
 
         _this.submitting = false;
+      }).then(function (r) {
+        return window.console.log(_this.comments);
       })["catch"](function (e) {
         if (e.response.status == 422) {
           /** When 422 occurs, use my custom error handler for form validation */
@@ -38056,7 +38061,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "py-2" }, [
     _c("div", { staticClass: "mx-auto col-md-7" }, [
-      _c("h2", [_vm._v("comment...")]),
+      _c("h3", [_vm._v("Comment...")]),
       _vm._v(" "),
       !_vm.loading
         ? _c(

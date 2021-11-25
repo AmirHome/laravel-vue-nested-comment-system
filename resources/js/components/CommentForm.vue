@@ -28,7 +28,9 @@
                 submitting: false
             }
         },
-
+        // mounted() {
+        //     console.log('Component comments mounted.')
+        // },
         methods: {
 
             /**
@@ -45,7 +47,7 @@
                 axios
                     .post('/api/comments', this.comment)
                     .then(r => {
-                        this.comments.push(r.data.data);
+                        this.comments.unshift(r.data.data);
                         this.comment = {};
 
                         // Toggles the form from parent Comment component
@@ -53,6 +55,7 @@
 
                         this.submitting = false;
                     })
+                    //.then( r => window.console.log(this.comments))
                     .catch(e => {
                         if(e.response.status == 422) {
                             /** When 422 occurs, use my custom error handler for form validation */

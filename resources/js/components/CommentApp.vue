@@ -1,7 +1,7 @@
 <template>
     <div class="py-2">
         <div class="mx-auto col-md-7">
-            <h2>comment...</h2>
+            <h3>Comment...</h3>
 
             <div class="mb-4" id="container-comments" v-if="!loading">
                 <comment v-for="c in comments" :key="c.id" :comment="c" :level="1"></comment>
