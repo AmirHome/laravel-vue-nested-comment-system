@@ -21,7 +21,9 @@
             </div>
         </div>
 
-
+        <div v-if="comment.children.length" class="pl-3 container-children-comment">
+            <comment v-for="c in comment.children" :key="c.id" :comment="c" :level="level+1"></comment>
+        </div>
     </div>
 </template>
 
