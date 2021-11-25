@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 /** No authentication guards as of this moment. Free for all! */
-Route::resource('comments', 'Api\CommentController')->only([
+Route::resource('comments', 'App\Http\Controllers\Api\CommentController')->only([
     'index', 'store'
 ]);;
